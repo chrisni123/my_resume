@@ -1,0 +1,40 @@
+{% extends "base-structure.html" %}
+
+{% block title %}Courses{% endblock %}
+
+{% block head%}
+  {{super()}}
+  <style>
+    body {
+      padding-top: 54px;
+    }
+  </style>
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+   <h1 class="mt-5"><i class="fa fa-pencil-square" aria-hidden="true"></i> Courses</h1>
+   <ul>
+     {% for course in courses %}
+       <li><a href="#" data-toggle="modal" data-target="#course">{{course[1]}}</a></li>
+       <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="course">
+       <div class="modal-dialog modal-sm">
+               <div class="modal-content">
+                 <div class="modal-content">
+                       <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                       <h4 class="modal-title" id="myModalLabel">{{course[1]}}</h4>
+                       </div>
+                       <div class="modal-body">
+                         {{course[2]}}
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+       {% endfor %}
+   </ul>
+
+
+    </div>
+   {% endblock %}

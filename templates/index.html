@@ -1,0 +1,54 @@
+{% extends "base-structure.html" %}
+
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block head%}
+  {{super()}}
+  <style>
+    body {
+      padding-top: 54px;
+    }
+    #intro {
+      padding-top: 15px;
+    }
+  </style>
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+   <h1 class="mt-5"><i class="fa fa-paper-plane" aria-hidden="true"></i> Christine's Resume</h1>
+   <h2>Education</h2>
+   <p>Univeristy of Delaware</p>
+   <p>Bachelor of Science, Management Information Systems</p>
+   <p>GPA: 3.10</p>
+   <h2>Work Experiences</h2>
+   <p>University of Delaware Office of Disability Support Services </p>
+   <p>Student Worker
+     <ul>
+       <li>Works with the Assistive Technology Coordinator to create over alternate textbook formats for students with disabilities.</li>
+       <li>Answers telephone calls and responds to questions that staff or students may have. </li>
+
+     </ul></p>
+
+    <p> LeShio</p>
+    <p> Assistant Manager/Hostess
+      <ul>
+        <li>Assisted in training and managing 5 employees</li>
+        <li>Answers complaints and questions</li>
+      </ul></p>
+
+  <h2>Skills</h2>
+  <p>
+    <ul>
+      <li>Proficient in Mac OS, Excel, Word, Access, and PowerPoint, Adobe DC, Kurzweil 3000, Abbey Fine Reader</li>
+      <li>Knowledgeable of Python, Java, HTML, CSS, R Statistical Computing, Database Design and Implementation</li>
+    </ul>
+  </p>
+
+<h2>Contact:</h2>
+<h2 class="mt-6"><a href="hhttps://www.linkedin.com/in/nichristine/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></h2>
+
+ </div>
+{% endblock %}
