@@ -34,7 +34,7 @@ def home():
 def get_all_courses():
     courses =[
     'BUAD 475',
-    'BUAD 302,
+    'BUAD 302',
     'Buad 309',
     'MISY 350'
     ]
