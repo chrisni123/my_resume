@@ -1,4 +1,4 @@
-{% extends "home-base.html" %}
+{% extends "base-structure.html" %}
 
 {% block title %}
 Edit Course
@@ -15,7 +15,7 @@ Edit Course
 
 {% block page_content %}
 <div class="container">
-   <h1 class="mt-5"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Course:</h1>
+   <h1 class="mt-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit Course:</h1>
   <form action="/course-directory/edit/{{course.id}}" method="post">
     <div class="form-group">
       <label>Course Number</label>
@@ -29,7 +29,7 @@ Edit Course
       <label>Description</label>
       <textarea class="form-control" name="description" required="true">{{course.description}}</textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Save Change</button>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
   </form>
  </div>
 {% endblock %}

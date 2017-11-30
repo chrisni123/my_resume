@@ -1,4 +1,4 @@
-{% extends "home-base.html" %}
+{% extends "base-structure.html" %}
 
 {% block title %}
 Edit Professor
@@ -15,7 +15,7 @@ Edit Professor
 
 {% block page_content %}
 <div class="container">
-   <h1 class="mt-5"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Professor:</h1>
+   <h1 class="mt-5"><i class="fa fa-user" aria-hidden="true"></i> Edit Professor:</h1>
   <form action="/professors/edit/{{professor.id}}" method="post">
     <div class="form-group">
       <label>Name</label>

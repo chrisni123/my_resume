@@ -1,11 +1,8 @@
-
 import os
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, session, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'qwertyuiop'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
@@ -28,28 +25,26 @@ class Course(db.Model):
     professor_id = db.Column(db.Integer, db.ForeignKey('professors.id'))
 
 
-
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/courses')
 def get_all_courses():
-    courses = [
-        'MISY262',
-        'MISY350',
-        'MISY225',
-        'BUAD309'
+    courses =[
+    'MISY330',
+    'MISY350',
+    'Buad309',
+    'BUAD301'
     ]
-    return render_template('all-courses.html', courses=courses)
+    return render_template('courses.html', courses = courses)
+
 
 
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
 @app.route('/professors')
 def show_all_professors():
     professors = Professor.query.all()
@@ -115,7 +110,5 @@ def add_courses():
         db.session.commit()
         return redirect(url_for('show_all_courses'))
 
-
 if __name__ == '__main__':
-
     app.run()
